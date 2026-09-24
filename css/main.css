@@ -1,0 +1,136 @@
+/* reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* propiedades del contenedor */
+.contenedor{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 5px;
+    grid-template-areas: 
+        "uno dos tres"
+        "cuatro cuatro cinco"
+        "seis siete siete";
+}
+
+/* propiedades de los items */
+
+
+.item-uno{
+    background-color: tomato;
+    grid-area: uno;
+}
+
+.item-dos{
+    background-color: rgb(149, 59, 43);
+    grid-area: dos;
+}
+
+.item-tres{
+    background-color: rgb(94, 37, 27);
+    grid-area: tres;
+}
+
+.item-cuatro{
+    background-color: rgb(51, 17, 11);
+    grid-area: cuatro;
+}
+
+.item-cinco{
+    background-color: rgb(118, 72, 64);
+    grid-area: cinco;
+}
+
+.item-seis{
+    background-color: rgb(106, 31, 18);
+    grid-area: seis;
+}
+
+.item-siete{
+    background-color: rgb(88, 68, 65);
+    grid-area: siete;
+}
+
+
+/* estilos generales */
+
+body{
+    background-color: #0E0D0D;
+}
+
+/* estilos de header */
+
+header{
+    display: flex;
+    align-items: center;
+}
+
+header nav ul{
+    display: flex;
+    gap: 16px;
+}
+
+header nav ul li{
+    color: whitesmoke;
+    list-style: none;
+}
+
+
+/* estilos de main */
+
+main{
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 25%);
+    gap: 20px;
+    padding: 1rem;
+    align-content: center;
+}
+
+main div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+main .img-dos, main .img-cinco{
+    display: none;
+}
+
+/* estilos de footer */
+
+footer{
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* mq tablet */
+@media (min-width: 768px){
+    header{
+        justify-content: center;
+    }
+
+    main{
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 40% 40%;
+    }
+
+    main .img-cuatro{
+        grid-column: span 2;
+    }
+}
+
+
+@media (min-width: 1024px){
+    main .img-dos, main .img-cinco{
+        display: block;
+    }
+}
+
+
